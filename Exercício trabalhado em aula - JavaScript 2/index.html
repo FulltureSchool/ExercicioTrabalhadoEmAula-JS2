@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <img src="./img/prev.svg" onclick="prevSlide()" alt="prev" />
+        <img src="./img/next.svg" onclick="nextSlide()" alt="next" />
+      </div>
+
+      <div class="slider"></div>
+    </div>
+
+    <script>
+      let slideAtual = 0;
+      const texts = [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Sed ut purus sit amet erat facilisis sollicitudin.",
+        "Suspendisse potenti. In faucibus, libero at pellentesque aliquam, diam turpis luctus neque, sit amet rutrum nulla sem sit amet erat.",
+        "In hac habitasse platea dictumst.",
+        "Donec lacinia, nisl eget ultricies luctus, ex arcu tristique ex, at tincidunt sem velit a leo.",
+      ];
+      const slider = document.querySelector(".slider");
+      slider.innerText = texts[0];
+
+      function nextSlide() {
+        if (slideAtual >= texts.length - 1) slideAtual = 0;
+        else slideAtual++;
+        slider.innerText = texts[slideAtual];
+      }
+
+      function prevSlide() {
+        if (slideAtual == 0) {
+          slideAtual = texts.length - 1;
+        } else {
+          slideAtual--;
+        }
+        slider.innerText = texts[slideAtual];
+      }
+    </script>
+  </body>
+</html>

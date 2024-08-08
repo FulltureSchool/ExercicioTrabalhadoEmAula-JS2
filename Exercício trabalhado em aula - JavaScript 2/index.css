@@ -1,0 +1,19 @@
+.buttons img {
+  cursor: pointer;
+}
+
+.buttons img:hover {
+  background-color: antiquewhite;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: rgb(216, 251, 251);
+}
